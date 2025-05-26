@@ -3000,7 +3000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &462432589
 Transform:
   m_ObjectHideFlags: 0
@@ -8921,7 +8921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b3c11058f549648bd478f6ce5f5c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutCanvas: {fileID: 0}
+  fadeOutCanvas: {fileID: 773990940}
   gameManager: {fileID: 1492906212}
   txtQuestionUpdate: {fileID: 972485959}
   txtInteractMsg: {fileID: 1532501252}
@@ -9592,7 +9592,10 @@ MonoBehaviour:
   heldItem: 
   maxHealth: 5
   isGameWon: 0
+  hasEscape: 0
   platesActive: 0
+  isDia1Done: 0
+  isDia2Done: 0
 --- !u!4 &1492906213
 Transform:
   m_ObjectHideFlags: 0

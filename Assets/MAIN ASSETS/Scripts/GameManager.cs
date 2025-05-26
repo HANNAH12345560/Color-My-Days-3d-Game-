@@ -41,6 +41,10 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 5;
     public bool isGameWon = false;
 
+    [Header("Level 7")]
+    public bool hasEscape = false;
+
+
     [Header("Level 8")]
     public int platesActive;
 
@@ -127,6 +131,11 @@ public class GameManager : MonoBehaviour
                         txtInteractMsg.text = "Everything�s ruined!";
                     Invoke("LoadLevel6", 2f);
                 }
+                break;
+            case 7:
+                if (txtInteractMsg != null)
+                    txtInteractMsg.text = "I need to pass the library to get to the rooftop.";
+
                 break;
             case 8:
                 if(platesActive == 2)

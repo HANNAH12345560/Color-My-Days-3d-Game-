@@ -16,9 +16,16 @@ public class DoorTrigger : MonoBehaviour
     {
         if (actor.CompareTag("Player"))
         {
+            foreach (AIPatrol ai in FindObjectsOfType<AIPatrol>())
+            {
+                ai.DeactivateAI();
+            }
             if (gameManager != null && gameManager.levelAt == 6)
             {
-                // Do NOT show "Press [E] to interact", and trigger logic automatically
+
+                if (fadeOutCanvas != null)
+                    fadeOutCanvas.SetActive(true);
+
                 gameManager.isGameWon = true;
                 txtInteractMsg.text = "Successfully survived!";
                 txtQuestionUpdate.text = "Loading next level...";
@@ -126,11 +133,25 @@ public class DoorTrigger : MonoBehaviour
                             Invoke("LoadLevel6", 2f);
                         }
                         break;
+                    case 7:
+
+                        gameManager.hasEscape = true;
+                        txtInteractMsg.text = "I passed them!";
+
+                        if (fadeOutCanvas != null)
+                            fadeOutCanvas.SetActive(true);
+
+                        txtQuestionUpdate.text = "Loading next level...";
+                        Invoke("LoadLevel8", 2f);
+                        break;
                     case 8:
                         if (gameManager.platesActive == 2)
                         {
+                            if (fadeOutCanvas != null)
+                                fadeOutCanvas.SetActive(true);
+
                             txtInteractMsg.text = "Loading next level";
-                            Invoke("LoadNextLevel", 0.5f);
+                            Invoke("LoadLevel9", 2f);
                         }
                         else
                         {
@@ -180,6 +201,10 @@ public class DoorTrigger : MonoBehaviour
     void LoadLevel8()
     {
         SceneManager.LoadScene("Level_8");
+    }
+    void LoadLevel9()
+    {
+        SceneManager.LoadScene("Level_9");
     }
 }
 
