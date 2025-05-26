@@ -126,7 +126,17 @@ public class DoorTrigger : MonoBehaviour
                             Invoke("LoadLevel6", 2f);
                         }
                         break;
-                    case 7:
+                    case 8:
+                        if (gameManager.platesActive == 2)
+                        {
+                            txtInteractMsg.text = "Loading next level";
+                            Invoke("LoadNextLevel", 0.5f);
+                        }
+                        else
+                        {
+                            txtInteractMsg.text = "It's stil locked...";
+                            txtQuestionUpdate.text = "Find a way to open the door.";
+                        }
                         break;
                 }
             }
@@ -166,6 +176,10 @@ public class DoorTrigger : MonoBehaviour
     void LoadLevel7()
     {
         SceneManager.LoadScene("Level_7");
+    }
+    void LoadLevel8()
+    {
+        SceneManager.LoadScene("Level_8");
     }
 }
 

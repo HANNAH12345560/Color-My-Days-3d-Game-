@@ -41,6 +41,17 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 5;
     public bool isGameWon = false;
 
+    [Header("Level 8")]
+    public int platesActive;
+
+    [Header("Level 10")]
+    public bool isDia1Done = false;
+    public bool isDia2Done = false;
+    public static GameManager Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -113,8 +124,14 @@ public class GameManager : MonoBehaviour
                 if (maxHealth == 0)
                 {
                     if (txtInteractMsg != null)
-                        txtInteractMsg.text = "Everything’s ruined!";
+                        txtInteractMsg.text = "Everythingï¿½s ruined!";
                     Invoke("LoadLevel6", 2f);
+                }
+                break;
+            case 8:
+                if(platesActive == 2)
+                {
+                    txtQuestionUpdate.text = "Go to the door";
                 }
                 break;
         }

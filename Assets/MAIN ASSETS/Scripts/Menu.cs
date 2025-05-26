@@ -17,6 +17,7 @@ public class Menu : MonoBehaviour
 
     void LoadLevel1()
     {
+        Destroy(fadeOutCanvas);
         SceneManager.LoadScene("Level_1");
     }
 
