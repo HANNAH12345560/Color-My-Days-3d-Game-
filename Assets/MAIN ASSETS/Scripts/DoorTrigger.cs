@@ -5,12 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
 public class DoorTrigger : MonoBehaviour
 {
     public GameObject fadeOutCanvas;
     public GameManager gameManager;
     public TMP_Text txtQuestionUpdate;
     public TMP_Text txtInteractMsg;
+    [Header("Level 9 Door")]
+    public int Level9DoorID;
+    public bool isLevel9CorrectDoor; //referenced to level 9, identifies correct door
+                                     
+   
+      
+
+       
+
+
+
 
     void OnTriggerEnter(Collider actor)
     {
@@ -159,6 +171,41 @@ public class DoorTrigger : MonoBehaviour
                             txtQuestionUpdate.text = "Find a way to open the door.";
                         }
                         break;
+                    case 9:
+                        if (Level9DoorID == 0)
+                        {
+                            txtInteractMsg.text = "Seems peaceful.";
+                        }
+                        else if (Level9DoorID == 1)
+                        {
+                            txtInteractMsg.text = "Kinda Noisy.";
+                        }
+                        else if (Level9DoorID == 2)
+                        {
+                            txtInteractMsg.text = "Feels refreshing.";
+                        }
+                        if (Level9DoorID == 2) // Right door is correct
+                        {
+                            if (fadeOutCanvas != null)
+                                fadeOutCanvas.SetActive(true);
+
+                                txtQuestionUpdate.text = "Loading next level...";
+                                Invoke("LoadLevel10", 2f);
+                           }
+
+                           
+                        else
+                        {
+                            if (fadeOutCanvas != null)
+                                fadeOutCanvas.SetActive(true);
+
+                            txtQuestionUpdate.text = "That was not the way to the rooftop.";
+                            Invoke("RestartLevel9", 2f);
+                        }
+                        break;
+
+                       
+
                 }
             }
         }
@@ -205,6 +252,16 @@ public class DoorTrigger : MonoBehaviour
     void LoadLevel9()
     {
         SceneManager.LoadScene("Level_9");
+    }
+    void RestartLevel9()
+    {
+        SceneManager.LoadScene("Level_9");
+    }
+
+    void LoadLevel10()
+    {
+        SceneManager.LoadScene("Level_10");
+
     }
 }
 
