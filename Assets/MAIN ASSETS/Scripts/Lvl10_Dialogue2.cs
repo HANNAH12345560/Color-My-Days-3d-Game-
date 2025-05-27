@@ -96,6 +96,7 @@ public class Lvl10_Dialogue2 : MonoBehaviour
                 txtQuestionUpdate.color = Color.black;
                 txtInteractMsg.text = "";
                 txtQuestionUpdate.text = "You've finally confessed and happily gay!";
+
                 if (fadeOutCanvas != null)
                     fadeOutCanvas.SetActive(true);
 
@@ -153,6 +154,7 @@ public class Lvl10_Dialogue2 : MonoBehaviour
     {
         if (fadeOutCanvas != null)
         Destroy(fadeOutCanvas);
+        
         SceneManager.LoadScene("TheEnd");
     }
 }

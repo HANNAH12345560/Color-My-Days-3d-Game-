@@ -3,28 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CinemachineTarget
-  - Friend
-  - Pencil
-  - Paper
-  - Envelope
-  - NPC1
-  - NPC2
-  - Mop
-  - Locker3
-  - Flower
-  - Cert
-  - Badge
-  - Mud
-  - Puddle
-  - Gate
-  - PlateActivator
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 

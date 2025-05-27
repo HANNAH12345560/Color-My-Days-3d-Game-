@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
                 if (maxHealth == 0)
                 {
                     if (txtInteractMsg != null)
-                        txtInteractMsg.text = "Everything�s ruined!";
+                        txtInteractMsg.text = "Everything's ruined!";
                     Invoke("LoadLevel6", 2f);
                 }
                 break;
@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour
                 if(platesActive == 2)
                 {
                     txtQuestionUpdate.text = "Go to the door";
+                }
+                break;
             case 9:
                 if (txtQuestionUpdate != null && txtQuestionUpdate.text == "")
                 {
@@ -177,4 +179,5 @@ public class GameManager : MonoBehaviour
     }
 
 }
+
 
