@@ -41,6 +41,14 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 5;
     public bool isGameWon = false;
 
+    [Header("Level 9")]
+    
+
+    public int Level9DoorID;// Identifies which door
+    public bool isLevel9CorrectDoor; //referEnced to level 9, identifies correct door
+
+
+
 
     void Update()
     {
@@ -115,6 +123,12 @@ public class GameManager : MonoBehaviour
                     if (txtInteractMsg != null)
                         txtInteractMsg.text = "Everything’s ruined!";
                     Invoke("LoadLevel6", 2f);
+                }
+                break;
+            case 9:
+                if (txtQuestionUpdate != null && txtQuestionUpdate.text == "")
+                {
+                    txtQuestionUpdate.text = "Listen and pick the right door.";
                 }
                 break;
         }
